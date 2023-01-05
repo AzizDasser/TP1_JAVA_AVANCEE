@@ -17,8 +17,8 @@ public class application {
         int qte = 0;
 
         MetierProduitImpl a = new MetierProduitImpl();
-        Produit p1 = new Produit(1l, "produit1", "marque1", 1000.00f, "disc1", 142);
-        a.add(p1);
+        //Produit p1 = new Produit(1l, "produit1", "marque1", 1000.00f, "disc1", 142);
+        //a.add(p1);
 
         do {
             System.out.println("1. Afficher la liste des produits.");
@@ -35,37 +35,37 @@ public class application {
                     System.out.println(a.getAll());
                     break;
                 case 2:
-                    System.out.println("entre l\'id :");
+                    System.out.println("Entre l\'id :");
                     Scanner scId = new Scanner(System.in);
                     System.out.println(a.findById(scId.nextLong()).toString());
                     break;
                 case 3:
                     Produit produit = new Produit();
 
-                    System.out.println("entre l\'id :");
+                    System.out.println("Entre l\'id :");
                     id = sc.nextLong();
                     produit.setId(id);
                     if(a.findById(id) != null){
-                        System.out.println("this id is already exists!!");
+                        System.out.println("Cet identifiant existe déjà !!");
                         break;
                     }
-                    System.out.println("entre le nom de produit :");
+                    System.out.println("Entre le nom de produit !:");
                     nom = sc.next();
                     produit.setNom(nom);
 
-                    System.out.println("entre la marque :");
+                    System.out.println("Entre la marque !:");
                     marque = sc.next();
                     produit.setMarque(marque);
 
-                    System.out.println("entre le prix :");
+                    System.out.println("Entre le prix !:");
                     prix = sc.nextFloat();
                     produit.setPrix(prix);
 
-                    System.out.println("entre la description :");
+                    System.out.println("Entre la description :");
                     description = sc.next();
                     produit.setDescription(description);
 
-                    System.out.println("entre la qte en stock :");
+                    System.out.println("Entre la qte en stock !:");
                     qte = sc.nextInt();
                     produit.setNbrEnStock(qte);
                     a.add(produit);
@@ -73,18 +73,18 @@ public class application {
                     for (Produit p : a.getAll()) {
                         System.out.println(p);
                     }
-                    System.out.println("le produit a ete insere avec succes");
+                    System.out.println("le produit a ete insere avec success");
                     break;
                 case 4:
-                    System.out.println("entre l\'id :");
+                    System.out.println("Entre l\'id ! :");
                     id = sc.nextLong();
                     a.delete(id);
                     break;
                 case 5:
-                    System.out.println("bye!");
+                    System.out.println("Good Bye!");
                     break;
                 default:
-                    System.out.println("chose another number");
+                    System.out.println("Choisissez un autre numéro !");
                     break;
             }
         }while (x != 5);
